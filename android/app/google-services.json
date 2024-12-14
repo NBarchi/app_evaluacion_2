@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "577966054215",
+    "firebase_url": "https://evaluacion2-956e0-default-rtdb.firebaseio.com",
+    "project_id": "evaluacion2-956e0",
+    "storage_bucket": "evaluacion2-956e0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577966054215:android:1044c66ccbc17067678a62",
+        "android_client_info": {
+          "package_name": "com.example.app_evaluacion_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_Xx3ZRj3ztZDbSOcsc1GGZne3l6Gusdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
