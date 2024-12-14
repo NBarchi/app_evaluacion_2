@@ -41,25 +41,45 @@ Widget servicios_listv(String url) {
             final item = data[index];
             return ListTile(
               title: Text(item['nombre']),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Proveedor: ${item['proveedor']['nombre']}'),
-                  Text(
-                      'Ubicación: ${item['proveedor']['ubicacion']['ciudad']}, ${item['proveedor']['ubicacion']['pais']}'),
-                  Text('Horario: ${item['horario']}'),
-                  const SizedBox(height: 8),
-                  Text(item['descripcion']),
-                  const SizedBox(height: 8),
-                  Image.network(item['info']['imagen']),
-                  const SizedBox(height: 8),
-                  Text('Precio: ${item['info']['precio']}'),
-                  Text('Duración: ${item['info']['duracion']}'),
-                  const SizedBox(height: 8),
-                  Text('Contacto: ${item['contacto']['telefono']}'),
-                  Text('Email: ${item['contacto']['email']}'),
-                ],
-              ),
+              subtitle: Text('Proveedor: ${item['proveedor']['nombre']}'),
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text(item['nombre']),
+                      content: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Proveedor: ${item['proveedor']['nombre']}'),
+                            Text('Ubicación: ${item['proveedor']['ubicacion']['ciudad']}, ${item['proveedor']['ubicacion']['pais']}'),
+                            Text('Horario: ${item['horario']}'),
+                            const SizedBox(height: 8),
+                            Text(item['descripcion']),
+                            const SizedBox(height: 8),
+                            Image.network(item['info']['imagen']),
+                            const SizedBox(height: 8),
+                            Text('Precio: ${item['info']['precio']}'),
+                            Text('Duración: ${item['info']['duracion']}'),
+                            const SizedBox(height: 8),
+                            Text('Contacto: ${item['contacto']['telefono']}'),
+                            Text('Email: ${item['contacto']['email']}'),
+                          ],
+                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('Cerrar'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
             );
           },
         );
